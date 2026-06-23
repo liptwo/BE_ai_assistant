@@ -23,7 +23,7 @@ async function generateMeetingSummary(transcriptText) {
   const prompt = `Bạn là trợ lý hãy tóm tắt nội dung chính cuộc họp. Dựa trên transcript sau, hãy tóm tắt và sinh biên bản họp gồm các phần: Thời gian, Nội dung chính (bullet points) nếu có, Quyết định đã đưa ra nếu có, Việc cần làm (action items) kèm người phụ trách nếu có. Transcript: ${transcriptText}`;
 
   try {
-    const model = genAI.getGenerativeModel({ model: 'gemini-3.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const summary = response.text();
